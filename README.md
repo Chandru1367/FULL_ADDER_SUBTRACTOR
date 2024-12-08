@@ -36,20 +36,60 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
-
 **Procedure**
-
-Write the detailed procedure here
-
+```
+1)Open Quartus2
+2)open new file
+3)create veri log file and using tools view the logic diagram
+4)Then click on netlist viewer and press RTL viewer to view the OUTPUT in graph format
+```
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+```
+1)FULL ADDER
+module fulladder(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+```
+```
+2)FULL SUBRACTOR
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+endmodule
+```
+Developed by: M.Chandru
+
+RegisterNumber: 24900224
 
 **RTL Schematic**
+ 
+ 1)FULL ADDER
+ 
+<img width="466" alt="image" src="https://github.com/user-attachments/assets/b398b5ce-480f-4bdb-ae64-089fd9d6aa24">
+
+2)FULL SUBRACTOR
+
+<img width="616" alt="image" src="https://github.com/user-attachments/assets/5419fc0a-30a4-4f40-9325-04d44fd3bc5d">
 
 **Output Timing Waveform**
+
+1)FULL ADDER
+
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/3eaa0b1e-6239-4bab-9173-fc7f4cd3ca84">
+
+
+2)FULL SUBRACTOR
+
+<img width="722" alt="image" src="https://github.com/user-attachments/assets/107eecf2-bada-48be-8692-cce251c7bb7f">
+
 
 **Result:**
 
